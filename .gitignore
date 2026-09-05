@@ -1,0 +1,26 @@
+node_modules/
+dist/
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.auth/
+playwright/.cache/
+blob-report/
+
+# Allure
+/allure-results/
+/allure-report/
+
+# Env / secrets
+.env
+.env.local
+
+# Debug artifacts produced by tests on unexpected states
+debug-*.png
+
+# OS / editor
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json

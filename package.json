@@ -1,0 +1,52 @@
+{
+  "name": "ax-opsactivity-automation",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript UI automation framework for AX Ops Activity stats regression, with Page Object Model design and an executive-ready HTML email report.",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --project=smoke",
+"test:sanity": "playwright test --project=sanity",
+"test:integration": "playwright test --project=integration",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:chromium": "playwright test --project=chromium",
+    "test:demo": "cross-env DEMO_DELAY=1500 playwright test --project=chromium --headed",
+    "report:html": "playwright show-report",
+    "report:allure:generate": "allure generate ./allure-results --clean -o ./allure-report",
+    "report:allure:open": "allure open ./allure-report",
+    "email:send": "ts-node utils/emailSender.ts",
+    "test:notify": "node scripts/run-tests-and-notify.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "pom",
+    "automation",
+    "qa"
+  ],
+  "author": "Suresh IT Academy",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/archiver": "^6.0.2",
+    "@types/node": "^20.14.0",
+    "@types/nodemailer": "^6.4.15",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^2.15.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.14"
+  }
+}
