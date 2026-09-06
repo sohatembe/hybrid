@@ -29,7 +29,7 @@ export default defineConfig({
   ],
  
   use: {
-    headless: false,
+    headless: !!process.env.CI,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
  
